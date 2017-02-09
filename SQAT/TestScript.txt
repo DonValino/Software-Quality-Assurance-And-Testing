@@ -1,0 +1,79 @@
+#TestCase 1
+#Written by: Don Valino
+#inputs: speed = 20 , speed limit = 30
+#Expected output: EURO 0
+#Output = EURO 0
+java trafficfine 20 30
+
+#TestCase 2
+#Written by: Don Valino
+#inputs: speed = 101 , speed limit = 30
+#Expected output: SUSPEND
+#Output = 100
+#Issue Identified: When we passed in the speed to be 101km/h and the speed limit to be 30km/h,
+the expected output should have been "SUSPEND". Instead, the output produced a fine of EUR 100.
+java trafficfine 101 30
+
+
+#TestCase 3
+#Written by: Gareth Quirke
+#inputs: speed = 50 , speed limit = 30 
+#Expected output: EUR 80
+#Output = EUR 80
+java trafficfine 50 30
+
+#TestCase 4
+#Written by: Don Valino
+#inputs: speed = 48 , speed limit = 50
+#Expected output: EUR 0
+#Output = EUR 0
+java trafficfine 48 50
+
+
+#TestCase 5
+#Written by: Don Valino
+#inputs: speed = 51 , speed limit = 50
+#Expected output: EUR 100
+#Output = EUR 100
+java trafficfine 51 50
+
+#TestCase 6
+#Written by: Don Valino
+#inputs: speed = 61 , speed limit = 50
+#Expected output: EUR 100
+#Output = EUR 150
+#Issue Identified: When we passed in the speed to be 51km/h and the speed limit to be 50km/h,
+the expected output was true with the output EUR 100. This is indicated by TestCase 5. However,
+when we passed in the speed to be 61km/h and the speed limit 50km/h, the expected output became false.
+This indicates a problem in the if condition of the program.
+java trafficfine 61 50
+
+#TestCase 7
+#Written by: Gareth Quirke
+#inputs: speed = 121 , speed limit = 50
+#Expected output: SUSPEND
+#Output = SUSPEND
+java trafficfine 121 50
+
+#TestCase 8
+#Written by: Gareth Quirke
+#inputs: speed = 119 , speed limit = 120
+#Expected output: EUR 0
+#Output = EUR 0
+java trafficfine 119 120
+
+#TestCase 9
+#Written by: Gareth Quirke
+#inputs: speed = 201 , speed limit = 120
+#Expected output: SUSPEND
+#Output = SUSPEND
+java trafficfine 201 120
+
+#TestCase 10
+#Written by: Gareth Quirke
+#inputs: speed = 120 , speed limit = 140
+#Expected output: Invalid input
+#Output = Blank Space
+#Issue Identified: When we passed in a randomly selected number to be the speed (i.e speed = 120km/h) and set the speed limit to 
+be above the condition indicated by the program (i.e speed limit = 140km/h), the expected output was false. Instead the expected output returned just blank spaces.
+java trafficfine 120 200
